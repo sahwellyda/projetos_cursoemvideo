@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições Aninhadas</title>
+    <style>
+        body{
+            background-color: #FFB6C1;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        P{
+            color: #C71585;
+        }
+        input{
+            color:#DA70D6 ;
+        }    
+    </style>
+</head>
+<body>
+    <p>Digite sua idade:</p> 
+    <input type="number" name="txtid" id="txtid">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id = "res">
+    </div>
+    <script>
+        function verificar(){
+            var txtid = window.document.querySelector("input#txtid");
+            var res = window.document.querySelector("div#res");
+            var resp = Number(txtid.value);
+            if (resp < 16) {
+                res.innerHTML = `<p>você tem ${resp} anos,seu Voto não é obrigatório! </p>`
+            }else if (resp < 18  || resp > 65){
+                res.innerHTML =`<p> Você tem ${resp} anos, seu voto é opcional <p/>`
+            }else{
+                res.innerHTML =`<p> Você tem ${resp} anos, seu Voto é obrigatório </p>`
+            }
+        }
+    </script>
+</body>
+</html>
